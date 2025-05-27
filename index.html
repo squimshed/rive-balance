@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rive Preview - Balancing Act</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Geist">
+  </head>
+  <body>
+    <canvas id="canvas" width="500px" height="500px"></canvas>
+
+    <script src="https://unpkg.com/@rive-app/canvas"></script>
+    <script>
+      const r = new rive.Rive({
+        src: "./balancing_act.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        // artboard: "Arboard", // Optional. If not supplied the default is selected
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          // Ensure the drawing surface matches the canvas size and device pixel ratio
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>
+    <p>Tutorial by <a href="https://www.jakeinmotion.com/">Jake in Motion</a>.</p>
+  </body>
+  <footer>
+    <p>made  by <a href="https://jackiechen.work">jackie</a></p>
+  </footer>
+</html>
